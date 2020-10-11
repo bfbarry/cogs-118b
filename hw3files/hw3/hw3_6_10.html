@@ -1,0 +1,34 @@
+<br>%%% HW3-6
+<br>%%
+<br>%%  if v is an eigenvector of matrix AA'  with eigenvalue lambda
+<br>%%   then    AA'v = lambda v
+<br>%%   and multiplying both sides on the left by A' we get
+<br>%%          A'AA'v = A' lambda v
+<br>%%          A'AA'v = lambda A'v (because lambda is a scalar we can move
+<br>%                                change it's order)
+<br>%%          A'A(A'v) = lambda(A'v)    just regrouping
+<br>%%    Therefore A'v is a eigenvector of A'A with eigenvalue lambda (the
+<br>%                                                      same eigenvalue)
+<br>%%
+<br>%%%%%%%%%%%%%%%%%%%%%%%  HW3 10
+<br> 
+<br>%% HW3 10
+<br>A = [1 2 3; 1 2 1; 2 4 5]; % Create the A matrix
+<br>x = rand(3, 1); % Create a random 3 x 1 vector
+<br>display(x); % Display it
+<br>for i = 1:5 % Start a loop that will execute 5 times
+<br>    x = (A * x) / norm(A * x); % Multiply x by A and normalize, put result back in x
+<br>    display(x); % Display it
+<br>end % Close the loop
+<br>[V, D] = eig(A); % Calculate eigenvectors and eigenvalues of A
+<br>display(V); % Display the eigenvectors
+<br>%% The answer for 4 is a close approximation of the eigenvector with the
+<br>%%largest eigenvalue from 5.  
+<br>%%  
+<br>%% When A is replaced by a 3x3 identity matrix, every unit length vector
+<br>%% stays the same.  (e.g. x=A*x/||A*x|| for all unit length x)
+<br>%% Every (non-zero) vector is an eigenvector of the identity matrix 
+<br>%% (Note that all 3 unit vectors returned have the same eigenvalue--  %% this means 
+<br>%% all linear combinations of these vectors have the same eigenvalue(1) and 
+<br>%% in this case all vectors of eigenvector (with eigenvalue 1) 
+
